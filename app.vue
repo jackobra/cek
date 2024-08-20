@@ -16,7 +16,6 @@
       <section>
         <h2>Special Offer</h2>
         <p>Temukan penawaran spesial kami hari ini!</p>
-        <img src="/special-offer.jpg" alt="Special Offer" />
       </section>
     </main>
 
