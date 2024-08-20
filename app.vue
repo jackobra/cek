@@ -1,58 +1,73 @@
 <template>
-  <div>
-    <header>
-      <h1>Selamat Datang di Restoran Kami</h1>
-      <nav>
-        <ul>
-          <li><NuxtLink to="/">Beranda</NuxtLink></li>
-          <li><NuxtLink to="/menu">Menu</NuxtLink></li>
-          <li><NuxtLink to="/about">Tentang Kami</NuxtLink></li>
-          <li><NuxtLink to="/contact">Kontak</NuxtLink></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <section>
-        <h2>Special Offer</h2>
-        <p>Temukan penawaran spesial kami hari ini!</p>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2024 Restoran Kami. Semua hak cipta dilindungi.</p>
-    </footer>
+  <div class="login-container">
+    <form @submit.prevent="handleLogin">
+      <h1>Login</h1>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input v-model="username" id="username" type="text" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input v-model="password" id="password" type="password" required />
+      </div>
+      <button type="submit">Login</button>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
-  head() {
+  data() {
     return {
-      title: 'Beranda - Restoran Kami',
+      username: '',
+      password: ''
+    };
+  },
+  methods: {
+    handleLogin() {
+      // Implement login logic here
+      console.log('Username:', this.username);
+      console.log('Password:', this.password);
     }
   }
-}
+};
 </script>
 
 <style scoped>
-header {
-  background: #000000;
-  color: #fff;
-  padding: 10px;
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #00b3ff;
+  border-radius: 5px;
 }
-nav ul {
-  list-style: none;
-  padding: 0;
+
+.form-group {
+  margin-bottom: 1rem;
 }
-nav ul li {
-  display: inline;
-  margin-right: 10px;
+
+.form-group label {
+  display: block;
+  margin-bottom: .5rem;
 }
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
+
+.form-group input {
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid #ff0000;
+  border-radius: 4px;
+}
+
+button {
+  padding: .75rem 1.5rem;
+  background-color: #000000;
+  border: none;
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #29ffdb;
 }
 </style>
