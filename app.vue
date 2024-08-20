@@ -1,6 +1,5 @@
 <template>
  <nav>
-    <img class="logo" src="logo1.png" alt="Ecobot">
         <h1>Ecobot</h1>
         <li class="contact"><a href="#contact">Contact</a></li>
         <li class="about"><a href="#about">About</a></li>
