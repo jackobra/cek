@@ -1,73 +1,50 @@
 <template>
-  <div class="login-container">
-    <form @submit.prevent="handleLogin">
-      <h1>Login</h1>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input v-model="username" id="username" type="text" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input v-model="password" id="password" type="password" required />
-      </div>
-      <button type="submit">Login</button>
-    </form>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><NuxtLink to="/dashboard">Home</NuxtLink></li>
+        <li><NuxtLink to="/dashboard/profile">Profile</NuxtLink></li>
+        <li><NuxtLink to="/dashboard/settings">Settings</NuxtLink></li>
+      </ul>
+    </aside>
+    <main class="content">
+      <Nuxt />
+    </main>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      username: '',
-      password: ''
-    };
-  },
-  methods: {
-    handleLogin() {
-      // Implement login logic here
-      console.log('Username:', this.username);
-      console.log('Password:', this.password);
-    }
-  }
-};
-</script>
-
 <style scoped>
-.login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 2rem;
-  border: 1px solid #00b3ff;
-  border-radius: 5px;
+.dashboard {
+  display: flex;
 }
 
-.form-group {
-  margin-bottom: 1rem;
+.sidebar {
+  width: 200px;
+  background: #f4f4f4;
+  padding: 1rem;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: .5rem;
+.sidebar h2 {
+  margin-top: 0;
 }
 
-.form-group input {
-  width: 100%;
-  padding: .5rem;
-  border: 1px solid #ff0000;
-  border-radius: 4px;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
-button {
-  padding: .75rem 1.5rem;
-  background-color: #000000;
-  border: none;
-  color: rgb(255, 255, 255);
-  border-radius: 4px;
-  cursor: pointer;
+.sidebar ul li {
+  margin: 0.5rem 0;
 }
 
-button:hover {
-  background-color: #29ffdb;
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
 }
 </style>
