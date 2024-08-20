@@ -6,6 +6,7 @@
         <li><NuxtLink to="/dashboard">Home</NuxtLink></li>
         <li><NuxtLink to="/dashboard/profile">Profile</NuxtLink></li>
         <li><NuxtLink to="/dashboard/settings">Settings</NuxtLink></li>
+        <li><NuxtLink to="/dashboard/settings">Anjay</NuxtLink></li>
       </ul>
     </aside>
     <main class="content">
@@ -18,7 +19,7 @@
 .dashboard {
   display: flex;
 }
-
+ 
 .sidebar {
   width: 200px;
   background: #f4f4f4;
